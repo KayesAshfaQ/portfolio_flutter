@@ -17,9 +17,6 @@ class MyApp extends StatelessWidget {
       color: const Color(0xFF2c2f32),
       theme: ThemeData(
         brightness: Brightness.light,
-
-        // primaryColorBrightness: Brightness.light,
-        // accentColorBrightness: Brightness.light
       ),
       home: const MyAppChild(),
     );
@@ -39,6 +36,6 @@ class _MyAppChildState extends State<MyAppChild> {
     // instantiating ScreenUtil singleton instance, as this will be used throughout
     // the app to get screen size and other stuff
     ScreenUtil.instance = ScreenUtil.getInstance()..init(context);
-    return HomePage();
+    return const HomePage();
   }
 }
