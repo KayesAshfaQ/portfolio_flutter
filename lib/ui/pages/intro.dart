@@ -36,7 +36,7 @@ class _IntroWidgetState extends State<IntroWidget> {
     return Stack(
       children: <Widget>[
         ResponsiveWidget.isLargeScreen(context) ? _buildDesign() : const SizedBox.shrink(),
-        _buildAppBar(context),
+        _buildHeader(context),
         Positioned(
           right: MediaQuery.of(context).size.width * 0.16,
           top: MediaQuery.of(context).size.width * 0.10,
@@ -108,7 +108,7 @@ class _IntroWidgetState extends State<IntroWidget> {
   Widget _buildMediumScreenContent(BuildContext context) {
     return Stack(
       children: <Widget>[
-        _buildAppBar(context),
+        _buildHeader(context),
         Positioned(
           left: MediaQuery.of(context).size.width * 0.70,
           top: MediaQuery.of(context).size.width * 0.30,
@@ -168,7 +168,7 @@ class _IntroWidgetState extends State<IntroWidget> {
   Widget _buildSmallScreenContent(BuildContext context) {
     return Stack(
       children: <Widget>[
-        _buildAppBar(context),
+        _buildHeader(context),
         Positioned(
           left: MediaQuery.of(context).size.width * 0.70,
           top: MediaQuery.of(context).size.width * 0.30,
@@ -231,18 +231,13 @@ class _IntroWidgetState extends State<IntroWidget> {
   }
 
   // general widgets:-----------------------------------------------------------
-  Widget _buildAppBar(BuildContext context) {
-    return Padding(
+  Widget _buildHeader(BuildContext context) {
+    return Container(
       padding: EdgeInsets.symmetric(
         horizontal: (ScreenUtil.getInstance().setWidth(40)),
         vertical: (ScreenUtil.getInstance().setWidth(20)),
       ),
-      child: AppBar(
-        titleSpacing: 0.0,
-        title: _buildTitle(),
-        backgroundColor: Colors.transparent,
-        elevation: 0.0,
-      ),
+      child: _buildTitle(),
     );
   }
 
