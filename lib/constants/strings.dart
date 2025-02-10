@@ -48,7 +48,7 @@ class Strings {
   static final educationList = [
     WorkExperience(
       organization: 'TechnoNext',
-      post: 'Jr. Software Engineer',
+      post: 'Software Engineer',
       from: 'Oct 2023',
       to: 'Present',
     ),
